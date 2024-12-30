@@ -1,0 +1,130 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Outer Container */
+.container {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #1f1f1f, #292929);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    width: 90%;
+    max-width: 400px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px); /* Moves the box slightly upward */
+    box-shadow: 0 8px 40px #03e9f4; /* Adds a glowing effect */
+}
+
+/* Title */
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #00d4ff;
+}
+
+/* Search Input and Button */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+    outline: none;
+    background: #1f1f1f;
+    color: #ffffff;
+    border: 1px solid #333;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #ffffff;
+    background: #03e9f4;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #008db3;
+}
+
+/* Weather Card */
+.weather-card {
+    margin-top: 20px;
+    padding: 20px;
+    background: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px #e9f403;
+    border: 2px solid #e9f403;
+}
+
+.weather-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(3, 233, 244, 0.2) 0%, rgba(3, 233, 244, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.weather-card:hover::before {
+    opacity: 1;
+}
+
+.weather-card h2 {
+    font-size: 24px;
+    color: #00d4ff;
+    margin-bottom: 10px;
+}
+
+.weather-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Error Message */
+.error-message {
+    color: #ff5757;
+    font-size: 14px;
+    margin-top: 10px;
+}
